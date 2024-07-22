@@ -1,0 +1,39 @@
+/*https://www.hackerrank.com/challenges/java-negative-subarray/problem?isFullScreen=true */
+/* NegativeSubarrays*/
+/*code */
+import java.util.Scanner;
+
+public class NegativeSubarrays {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Read the length of the array
+        int n = scanner.nextInt();
+        
+        // Read the array elements
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = scanner.nextInt();
+        }
+        
+        // Initialize the count of negative subarrays
+        int negativeSubarrayCount = 0;
+        
+        // Generate all subarrays and count the negative sums
+        for (int start = 0; start < n; start++) {
+            int sum = 0;
+            for (int end = start; end < n; end++) {
+                sum += arr[end];
+                if (sum < 0) {
+                    negativeSubarrayCount++;
+                }
+            }
+        }
+        
+        // Print the result
+        System.out.println(negativeSubarrayCount);
+        
+        // Close the scanner
+        scanner.close();
+    }
+}
