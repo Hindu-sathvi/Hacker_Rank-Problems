@@ -1,18 +1,31 @@
-/*https://www.hackerrank.com/challenges/java-end-of-file/problem?isFullScreen=true */
-/*End-of-file */
+/* https://www.hackerrank.com/challenges/java-inheritance-1/problem?isFullScreen=true */
+/*java-inheritance-1 */
 /*code */
-import java.util.*;
+class Animal{
+	void walk(){
+		System.out.println("I am walking");
+	}
+}
+
+class Bird extends Animal{
+	void fly(){
+		System.out.println("I am flying");
+
+	}
+    void sing( )
+    {
+        System.out.println("I am singing");
+    }
+}
+
 public class Solution{
 
-    public static void main(String[] args) {
-        try (  Scanner sc = new Scanner(System.in)) {
-            int lineNumber = 1;
-            while (sc.hasNext()) {
-                String line = sc.nextLine();
-                System.out.println(lineNumber + " " + line);
-                lineNumber++;
-             }
-        }
-        
-    }
+   public static void main(String args[]){
+
+	  Bird bird = new Bird();
+	  bird.walk();
+	  bird.fly();
+      bird.sing();
+	
+   }
 }
